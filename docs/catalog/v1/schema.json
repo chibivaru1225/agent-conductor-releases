@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://chibivaru1225.github.io/agent-conductor-releases/catalog/v1/schema.json",
+  "title": "Agent Conductor catalog v1",
+  "type": "object",
+  "required": ["schemaVersion", "revision", "generatedAtUtc", "agents"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "revision": { "type": "string", "minLength": 1 },
+    "generatedAtUtc": { "type": "string", "format": "date-time" },
+    "agents": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/agent" }
+    }
+  },
+  "definitions": {
+    "agent": {
+      "type": "object",
+      "required": ["id", "displayName", "capabilities", "models"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"
+        },
+        "displayName": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["plan", "implement", "review", "hosted-review"]
+          }
+        },
+        "models": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/model" }
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["id", "displayName", "state"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+        },
+        "displayName": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "state": {
+          "type": "string",
+          "enum": ["active", "deprecated", "retired", "hidden"]
+        }
+      }
+    }
+  }
+}

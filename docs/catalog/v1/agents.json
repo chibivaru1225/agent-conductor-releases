@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-07-03.1",
+  "generatedAtUtc": "2026-07-03T00:00:00Z",
+  "agents": [
+    {
+      "id": "claude",
+      "displayName": "Claude",
+      "capabilities": ["plan", "implement", "review"],
+      "models": [
+        { "id": "sonnet", "displayName": "Sonnet", "state": "active" },
+        { "id": "opus", "displayName": "Opus", "state": "active" },
+        { "id": "haiku", "displayName": "Haiku", "state": "active" }
+      ]
+    },
+    {
+      "id": "codex",
+      "displayName": "Codex",
+      "capabilities": ["plan", "implement", "review"],
+      "models": [
+        { "id": "gpt-5.5", "displayName": "GPT-5.5", "state": "active" },
+        { "id": "gpt-5.4", "displayName": "GPT-5.4", "state": "active" },
+        { "id": "gpt-5.4-mini", "displayName": "GPT-5.4 Mini", "state": "active" },
+        { "id": "gpt-5.3-codex", "displayName": "GPT-5.3 Codex", "state": "retired" },
+        { "id": "gpt-5.2-codex", "displayName": "GPT-5.2 Codex", "state": "retired" }
+      ]
+    },
+    {
+      "id": "grok",
+      "displayName": "Grok",
+      "capabilities": ["plan", "implement", "review"],
+      "models": [
+        { "id": "grok-composer-2.5-fast", "displayName": "Composer 2.5 Fast", "state": "active" },
+        { "id": "grok-build", "displayName": "Grok Build", "state": "active" }
+      ]
+    },
+    {
+      "id": "gemini",
+      "displayName": "Gemini",
+      "capabilities": ["plan", "implement", "review"],
+      "models": [
+        { "id": "auto", "displayName": "Auto", "state": "active" },
+        { "id": "pro", "displayName": "Pro", "state": "active" },
+        { "id": "flash", "displayName": "Flash", "state": "active" },
+        { "id": "flash-lite", "displayName": "Flash Lite", "state": "active" }
+      ]
+    },
+    {
+      "id": "copilot",
+      "displayName": "GitHub Copilot",
+      "capabilities": ["hosted-review"],
+      "models": []
+    }
+  ]
+}

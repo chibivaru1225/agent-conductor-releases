@@ -3,8 +3,8 @@
 Official Windows downloads and release notes for Agent Conductor, a local dashboard
 for orchestrating AI coding agents.
 
-This repository contains release files only. The application source code is maintained
-separately.
+This repository contains release files and public metadata (such as the agent/model
+catalog). The application source code is maintained separately.
 
 ## Download
 
@@ -44,6 +44,20 @@ Get-FileHash .\agent-conductor-<version>-win-x64-portable.zip -Algorithm SHA256
 ```
 
 The displayed hash must match the value in the downloaded `.sha256` file.
+
+## Agent/model catalog
+
+Agent Conductor downloads a small JSON catalog from this repository's GitHub Pages site
+to learn about supported agents and models without requiring an application update:
+
+```text
+https://chibivaru1225.github.io/agent-conductor-releases/catalog/v1/agents.json
+```
+
+The file only lists agent/model IDs, display names, and lifecycle state (`active`,
+`deprecated`, `retired`, `hidden`). It never contains commands, executables, or
+arguments. See [`docs/catalog/v1/schema.json`](docs/catalog/v1/schema.json) for the
+schema.
 
 ## Feedback
 
